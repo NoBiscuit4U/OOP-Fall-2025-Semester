@@ -7,19 +7,18 @@ while True:
     option=input("Enter Desired Option: ")
 
     if option !="4":
-        a = int(input("Enter First Number: "))
-        b = int(input("Enter Second Number: "))
+        numbers = input("Enter Two Numbers Seperated by a ,: ").split(",")
     else:
         break
 
     if option=="0":
-        print(a," + ",b," = ",a+b)
+        print(numbers[0]+" + "+numbers[0]," = ",int(numbers[0])+int(numbers[1]))
     elif option=="1":
-        print(a, " - ", b, " = ", a-b)
+        print(numbers[0]+" - "+numbers[0]," = ",int(numbers[0])-int(numbers[1]))
     elif option=="2":
-        print(a, " * ", b, " = ", a*b)
+        print(numbers[0]+" * "+numbers[0]," = ",int(numbers[0])*int(numbers[1]))
     elif option=="3":
-        print(a, " / ", b, " = ", a/b)
+        print(numbers[0]+" / "+numbers[0]," = ",int(numbers[0])/int(numbers[1]))
     else:
         print("Invalid Option Chosen")
 

@@ -14,12 +14,6 @@ while True:
 
     if selected == 0:
         user_input=input("Enter The Employee Information: Name,Pay,Allowance,Deductions,Taxes: ").split(",")
-    elif selected == 1:
-        employee_name=input("Enter The Employee Name for Removal: ")
-    elif selected == 2:
-        user_input = input("Enter The New Information: Name,Pay,Allowance,Deductions,Taxes: ").split(",")
-
-    if selected == 0:
         gross_pay = int(user_input[1]) + int(user_input[2])
         net_pay= gross_pay-(int(user_input[3])+int(user_input[4]))
         new_employee={"Employee-"+str(len(myEmployees)):{
@@ -34,12 +28,14 @@ while True:
 
         myEmployees.update(new_employee)
     elif selected == 1:
+        employee_name=input("Enter The Employee Name for Removal: ")
             for key in myEmployees.keys():
                 if myEmployees[key].get("Name") == employee_name:
                     del myEmployees[key]
                     break
 
     elif selected == 2:
+        user_input = input("Enter The New Information: Name,Pay,Allowance,Deductions,Taxes: ").split(",")
         for key in myEmployees.keys():
             if myEmployees[key].get("Name") == user_input[0]:
                 index = 0
@@ -66,3 +62,4 @@ while True:
     else:
 
         print("Invalid Option")
+

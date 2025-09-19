@@ -1,5 +1,4 @@
 myEmployees={}
-myEmployees.update()
 employee_template={"Name":"","Pay":"","Allowance":"","Deductions":"","Taxes":""}
 options=["Add an Employee","Delete an Employee","Modify Employee Information","Display Employee Information","Exit Program"]
 
@@ -65,4 +64,5 @@ while True:
         print("Exiting Program")
         break
     else:
+
         print("Invalid Option")

@@ -1,4 +1,3 @@
-desired_inputs=[]
 projects={}
 options=["Project Initiation","Project Closure","Project Progress Update",
          "Print Specific Project","Print All","Close Application"]

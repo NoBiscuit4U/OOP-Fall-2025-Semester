@@ -154,10 +154,3 @@ while 1:
 
     else:
         print("Invalid Option")
-
-
-
-
-
-
-

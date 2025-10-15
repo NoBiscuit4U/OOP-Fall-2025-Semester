@@ -1,6 +1,5 @@
 import pickle
 
-
 with open("cred_info","rb") as f:
     load_dict = pickle.load(f)
 

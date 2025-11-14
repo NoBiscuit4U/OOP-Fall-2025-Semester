@@ -22,17 +22,18 @@ class Stack:
             dis_box.delete(1.0,tk.END)
             dis_box.insert(tk.INSERT,str_ele)
 
+top=tk.Tk()
+
 m_stacks=[Stack()]
+m_options=["Stack 1"]
+
 m_sele_stack=m_stacks[0]
 
-def create_stack():
-    m_stacks.append(Stack())
+option_var=tk.StringVar(top)
+option_var.set("Stack 1")
 
-def select_stack(x):
-    global m_sele_stack
-    m_sele_stack=m_stacks[x]
-
-top=tk.Tk()
+option_selector=tk.OptionMenu(top,option_var,*m_options,command=lambda x: select_stack(x))
+option_selector.pack()
 
 top.geometry("300x375")
 view_box=tk.Text(top,width=150,height=1)
@@ -40,10 +41,18 @@ view_box.place(x=0,y=50)
 input_box=tk.Text(top,width=150,height=1)
 input_box.place(x=0,y=110)
 
-options=tk.StringVar(top)
-options.set()
+def create_stack():
+    m_stacks.append(Stack())
+    m_options.append(f"Stack {len(m_stacks)}")
 
-option_selector=tk.OptionMenu()
+    option_selector=tk.OptionMenu(top,option_var,*m_options,command=lambda x: select_stack(x))
+    option_selector.pack()
+    option_selector.place(x=103,y=250)
+
+def select_stack(x):
+    global m_sele_stack
+    m_sele_stack=m_stacks[int(x[-1:])-1]
+    view_box.delete(1.0,tk.END)
 
 c_stack=tk.Button(top,text="Create Stack",width=10,height=5,command=lambda:create_stack(),anchor="center")
 c_stack.place(x=13,y=150)
@@ -57,6 +66,6 @@ pop_stack.place(x=203,y=150)
 dis_stack=tk.Button(top,text="Display Stack",width=10,height=5,command=lambda:m_sele_stack.display(view_box),anchor="center")
 dis_stack.place(x=13,y=250)
 
-#stack_selector.place(x=103,y=250)
+option_selector.place(x=103,y=250)
 
 top.mainloop()

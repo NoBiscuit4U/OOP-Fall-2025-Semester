@@ -40,6 +40,11 @@ view_box.place(x=0,y=50)
 input_box=tk.Text(top,width=150,height=1)
 input_box.place(x=0,y=110)
 
+options=tk.StringVar(top)
+options.set()
+
+option_selector=tk.OptionMenu()
+
 c_stack=tk.Button(top,text="Create Stack",width=10,height=5,command=lambda:create_stack(),anchor="center")
 c_stack.place(x=13,y=150)
 

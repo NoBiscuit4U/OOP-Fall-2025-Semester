@@ -55,7 +55,7 @@ customers={}
 options=["Create Customer","Remove Customer","Edit Customer Values","Display All Customer Information","Money Transfer","Exit"]
 
 while 1:
-
+    break
     print("Options:")
     for i in range(len(options)):
         print(f"    {options[i]}: {i}")
